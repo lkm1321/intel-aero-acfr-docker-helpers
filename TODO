@@ -1,3 +1,4 @@
 # Integrate camera using ROS
-# Have a look at the flight log from last time again
+# Have a look at the flight log from last time again. Check if vibration causes issue. 
 # 
+# Source ROS_IP at startup. 

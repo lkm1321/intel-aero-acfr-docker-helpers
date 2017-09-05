@@ -10,6 +10,9 @@ run:
 	lkm1321/intel-aero-acfr:latest 
 #	xhost +local:`docker inspect --format='{{ .Config.Hostname }}' $containerId` \
 	docker start $containerId
+
+attach: 
+	docker exec -it intel-aero-docker bash 
  
 run-root: 
 	docker run -it --privileged \
