@@ -6,6 +6,7 @@ run:
 	-e QT_X11_NO_MITSHM=1 \
 	-u acfr \
 	-v /tmp/.X11-unix:/tmp/.X11-unix:rw \
+	-p 5700:5700 \ 
 	--device=/dev/dri:/dev/dri \
 	lkm1321/intel-aero-acfr:latest 
 #	xhost +local:`docker inspect --format='{{ .Config.Hostname }}' $containerId` \
