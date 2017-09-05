@@ -1,7 +1,8 @@
 run: 
 	docker run -it --privileged \
 	--name=intel-aero-docker \
-	-p 5700:5700 -e QT_GRAPHICSSYSTEM="native" \
+	--network=host \
+	-e QT_GRAPHICSSYSTEM="native" \
 	-e DISPLAY \
 	-e QT_X11_NO_MITSHM=1 \
 	-u acfr \
