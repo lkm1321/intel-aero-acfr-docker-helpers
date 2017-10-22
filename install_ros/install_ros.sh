@@ -2,5 +2,5 @@
 
 for entry in $(cat install_order.txt); do
 	echo Installing $entry
-	pacaur -S -a --noconfirm --noedit --needed $entry 
+	pacaur -S -a --noconfirm --noedit $entry 
 done
