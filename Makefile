@@ -1,7 +1,7 @@
 run: 
 	docker run -it --privileged \
 	--name=intel-aero-docker \
-	--network=host \
+	--net=host \
 	-e QT_GRAPHICSSYSTEM="native" \
 	-e DISPLAY \
 	-e QT_X11_NO_MITSHM=1 \
@@ -11,9 +11,10 @@ run:
 	lkm1321/intel-aero-acfr:latest
 #	xhost +local:`docker inspect --format='{{ .Config.Hostname }}' $containerId` \
 #	docker start $containerId
+#	-v /var/run/dbus:/var/run/dbus \ # If I ever need to mount dbus
 
 attach: 
-	docker exec -it intel-aero-docker /ros_entrypoint.sh
+	docker exec -it intel-aero-docker /ros_entrypoint.sh bash
 
 commit:
 	docker commit intel-aero-docker lkm1321/intel-aero-acfr:latest
