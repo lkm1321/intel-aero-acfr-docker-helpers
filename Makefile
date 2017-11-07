@@ -19,6 +19,9 @@ attach:
 commit:
 	docker commit intel-aero-docker lkm1321/intel-aero-acfr:latest
 
+recover:
+	docker run -it --entrypoint=/bin/bash --name=intel-aero-docker -u root lkm1321/intel-aero-acfr:latest --login
+
 clean: 
 	docker rm intel-aero-docker 
 
