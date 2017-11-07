@@ -5,7 +5,7 @@ run:
 	-e QT_GRAPHICSSYSTEM="native" \
 	-e DISPLAY \
 	-e QT_X11_NO_MITSHM=1 \
-	-u acfr \
+	-u root \
 	-v /tmp/.X11-unix:/tmp/.X11-unix:rw \
 	--device=/dev/dri:/dev/dri \
 	lkm1321/intel-aero-acfr:latest
