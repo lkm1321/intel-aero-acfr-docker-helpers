@@ -8,7 +8,8 @@ run:
 	-u root \
 	-v /tmp/.X11-unix:/tmp/.X11-unix:rw \
 	--device=/dev/dri:/dev/dri \
-	lkm1321/intel-aero-acfr:latest
+	--entrypoint=/ros_entrypoint.sh \
+	lkm1321/intel-aero-acfr:latest bash
 #	xhost +local:`docker inspect --format='{{ .Config.Hostname }}' $containerId` \
 #	docker start $containerId
 #	-v /var/run/dbus:/var/run/dbus \ # If I ever need to mount dbus
