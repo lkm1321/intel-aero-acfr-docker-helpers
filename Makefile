@@ -14,6 +14,15 @@ run:
 #	docker start $containerId
 #	-v /var/run/dbus:/var/run/dbus \ # If I ever need to mount dbus
 
+run-standalone: # Don't get a shell 
+	docker run --privileged \
+	--name=intel-aero-docker \
+	--net=host \
+	-u root \
+	--device=/dev/dri:/dev/dri \
+	--entrypoint=/ros_entrypoint_standalone.sh \
+	lkm1321/intel-aero-acfr:latest roslaunch intel-aero-acfr intel-aero-acfr.launch
+
 attach: 
 	docker exec -it intel-aero-docker /ros_entrypoint.sh bash
 
